@@ -1,8 +1,53 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/styles/globals.css";
+import { ScriptsBlock } from "@/app/scripts/ScriptsBlock";
+import localFont from '@next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+const sfPro = localFont({
+  src: [
+    {
+      path: '../public/fonts/SFProDisplay-Regular.woff2',
+      weight: '400'
+    },
+    {
+      path: '../public/fonts/SFProDisplay-Medium.woff2',
+      weight: '500'
+    },
+    {
+      path: '../public/fonts/SFProDisplay-Semibold.woff2',
+      weight: '600'
+    },
+    {
+      path: '../public/fonts/SFProDisplay-Bold.woff2',
+      weight: '700'
+    },
+    {
+      path: '../public/fonts/SFProDisplay-Heavy.woff2',
+      weight: '800'
+    }
+  ],
+  variable: '--font-sf-pro',
+})
+
+const raleway = localFont({
+  src: [
+    {
+      path: '../public/fonts/Raleway-SemiBold.woff2',
+      weight: '600'
+    },
+  ],
+  variable: '--font-raleway',
+})
+
+const aquma = localFont({
+  src: [
+    {
+      path: '../public/fonts/Aqum.woff2',
+      weight: '700'
+    },
+  ],
+  variable: '--font-aquma',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +60,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body className={`${sfPro.className} ${raleway.className} ${aquma.className}`}>
+          <ScriptsBlock />
+          {children}
+      </body>
     </html>
   );
 }
