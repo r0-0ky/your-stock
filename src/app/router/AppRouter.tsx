@@ -4,8 +4,8 @@ import { Preload } from "@/shared/ui/preload";
 import { useTgDataStore } from "@/app/stores/tg-data-store/tg-data.store";
 import { useUserStore } from "@/app/stores/user-store/user.store";
 import { useEffect } from "react";
-import { OnboardPage } from "@/pages/onboard-page";
-import { MapPage } from "@/pages/map-page";
+import { OnboardPage } from "@/fsd.pages/onboard-page";
+import { MapPage } from "@/fsd.pages/map-page";
 
 export const AppRouter: React.FC = () => {
   const [setIsLoad, isFirstLogin] = useUserStore((state: any) => [state.setIsLoad, state.isFirstLogin]);
