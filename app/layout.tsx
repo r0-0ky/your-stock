@@ -61,9 +61,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${sfPro.className} ${raleway.className} ${aquma.className}`}>
+      <body className={`${sfPro.variable} ${aquma.variable} ${raleway.variable} bg-white`}>
           <ScriptsBlock />
-          {children}
+          <main className="max-w-[700px] relative flex flex-col mx-auto h-screen">
+            {children}
+          </main>
       </body>
     </html>
   );
